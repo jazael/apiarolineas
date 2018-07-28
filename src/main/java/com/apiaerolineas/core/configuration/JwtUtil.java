@@ -1,6 +1,7 @@
 package com.apiaerolineas.core.configuration;
 import java.util.Collections;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,6 +21,7 @@ public class JwtUtil {
 				.compact();
 		// Agregamos al encabezado el token
 		res.addHeader("Authorization", "Bearer " + token);
+		res.addCookie(new Cookie("Authorization", token));
 	}
 	
 	static Authentication getAuthentication(HttpServletRequest request) {

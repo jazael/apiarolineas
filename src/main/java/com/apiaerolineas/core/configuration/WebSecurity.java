@@ -27,7 +27,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests()
-			.antMatchers("/login", "/v1/solicitud").permitAll() // Se permite acceso al login y a la ruta pública de crear solicitud
+			.antMatchers("/login", "/v1/solicitud", "/v1/solicitudespaginador").permitAll() // Se permite acceso al login y a la ruta pública de crear solicitud
 			.anyRequest().authenticated() // Cualquier otra petición requiere autenticación
 			.and()
 			// Las perticiones /login pasaran previamente por este filtro
