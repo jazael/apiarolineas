@@ -2,20 +2,25 @@
 Proyecto basado en spring boot, para la automatización y gestión de procesos de requisitos de vuelo dentro de una compañía
 Para poder ejecutar y poner en funcionamiento la api debes seguir los siguientes
 Para ejecutar el proyecto primero debes crear una Base de Datos en postgresql con el nombre aerolinea.
-
+# Credenciales de usuario
+Al finalizar la puesta en desarrollo del api se debe crear el siguiente usuario, con el fin de autenticarnos y que este pueda aprobar las solicitudes.
+# Ejecutar Script
+INSERT INTO public.usuario(
+	id, activo, contrasena, rol, usuario)
+	VALUES (1, true, '12345', 2, 'prueba@hotmail.com');
 
 Parametrización del archivo application.properties
 
 ![captura de pantalla de 2018-07-28 18-23-47](https://user-images.githubusercontent.com/11983683/43361441-474d51cc-9294-11e8-94ae-bc64d925dad2.png)
 
-Estructura del proyecto:
-CONFIGURATION => Generación del JWT, permisos de rutas públicas y privadas
-ENTITY => Entidades del proyecto
-MODEL => Representaciones de las entidades
-REPOSITORY => Métodos de acceso a la BD (save, find, delete)
-UTILITARIOS => Métodos de conversión
-SERVICE => Métodos que se asocian a los repositorios
-CONTROLLER => Métodos para las peticiones http (POST, PUT, GET, DELETE)
+# Estructura del proyecto
+CONFIGURATION => Generación del JWT, permisos de rutas públicas y privadas.
+ENTITY => Entidades del proyecto.
+MODEL => Representaciones de las entidades.
+REPOSITORY => Métodos de acceso a la BD (save, find, delete).
+UTILITARIOS => Métodos de conversión.
+SERVICE => Métodos que se asocian a los repositorios.
+CONTROLLER => Métodos para las peticiones http (POST, PUT, GET, DELETE).
 
 Inicio de sesión utilzando JWT
 
